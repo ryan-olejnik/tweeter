@@ -1,0 +1,44 @@
+.new-tweet {
+  text-align: center;
+  height: 200px;
+  background-color: #ccffcc;
+  /*border: solid black;*/
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 9px 8px 12px 0px #888888;
+}
+
+.new-tweet:hover{
+  box-shadow: 20px 18px 12px 0px #888888;
+}
+
+.new-tweet h2 {
+    top: 10px;
+    position: relative;
+}
+
+.new-tweet hr {
+  width: 350px;
+}
+
+.new-tweet textarea {
+  position: relative;
+  top: 15px;
+}
+
+.new-tweet input {
+  height: 44px;
+  position: relative;
+  top: -1px;
+  border-radius: 5px;
+}
+
+.new-tweet input:hover {
+  background-color: yellow;
+}
+
+#counter{
+  text-align: right;
+  padding: 5px;
+}
+

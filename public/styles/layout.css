@@ -34,26 +34,5 @@ body {
   padding: 30px;
 }
 
-.new-tweet{
-  text-align: center;
-  height: 200px;
-  background-color: #ccffcc;
-  border: solid black;
-  margin: auto;
-}
-
-.new-tweet {
-  text-align: center;
-}
-
-
-
-
-
-#counter{
-  text-align: right;
-  padding: 5px;
-}
-
 
 

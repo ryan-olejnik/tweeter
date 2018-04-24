@@ -3,8 +3,6 @@
   background-color: #00a087;
   height: 80px;
   padding-left: 2em;
-
-
 }
 
 #nav-bar > img {
@@ -18,4 +16,10 @@
   float: left;
   line-height: 100px;
   padding-left: 10px;
+}
+
+#counter{
+  position: relative;
+  top: 76px;
+  left: 55px;
 }
