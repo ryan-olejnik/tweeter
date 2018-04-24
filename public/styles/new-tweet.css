@@ -2,10 +2,10 @@
   text-align: center;
   height: 200px;
   background-color: #ccffcc;
-  /*border: solid black;*/
-  margin: auto;
   border-radius: 20px;
   box-shadow: 9px 8px 12px 0px #888888;
+  position: relative;
+  top: -25px;
 }
 
 .new-tweet:hover{

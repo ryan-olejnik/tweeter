@@ -1,0 +1,49 @@
+#tweets-container > article {
+  background-color: #ccffff;
+  border-color: black;
+  border-radius: 10px;
+  color: #b8c8e0;
+  margin:1em;
+}
+
+#tweets-container > article:hover {
+  background-color: #4dffff;
+  border-color: black;
+  border-radius: 10px;
+  color: #2e3238;
+}
+
+#tweets-container header{
+  background-color: #85bc7c;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 50px;
+  margin: auto;
+  line-height: 46px;
+
+}
+
+#tweets-container footer p {
+  left: 7px;
+  text-align: left;
+  top: -5px;
+  position: relative;
+  
+}
+
+#tweets-container hr {
+  position: relative;
+  top: 8px;
+}
+
+#tweets-container img {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -60px;
+  left: -150px;
+  border: solid black;
+  background-color: white;
+  border-radius: 3px;
+  border-width: 1px;
+}

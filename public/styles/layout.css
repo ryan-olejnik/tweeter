@@ -22,17 +22,24 @@ body {
   background-color: #eee;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
 .container{
   background-color: white;
-  height: 400px;
+  border-color: #ebebe0;
+  height: 265px;
   width: 450px;
   margin: auto;
   padding: 30px;
 }
 
-
+#tweets-container{
+    background-color: #e6ccb3;
+    height: 700px;
+    width: 450px;
+    margin: auto;
+    padding: 30px;
+    position: relative;
+    top: 15px;
+    left: -30px;
+    text-align: center;
+}
 
