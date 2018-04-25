@@ -87,7 +87,7 @@ function renderTweets(tweetList){
 $(document).ready(function(){
   renderTweets(tweetList);
 
-
+  // Creating a new Tweet:
   $('#new-tweet-form').on('submit', function(event){
     // Prevent the form from sending  POST request to the server, and redirecting the page
     event.preventDefault();
@@ -103,29 +103,36 @@ $(document).ready(function(){
       url: '/tweets',
       data: tweet,
 
-      sucess: function(data, status, jqXHR){
-        console.log('AJAX request successful\n status:', status);
+      success: function(data, status, jqXHR){
+        console.log('Tweet successfully posted to tweet database!\n status:', status);
       },
 
       error: function(jqXHR, status, error){
-        console.log('status:', status, '\nError thrown:', error);
+        console.log('Tweet was NOT posted to tweet database\nstatus:', status, '\nError thrown:', error);
       }
-
-
-
 
     });
 
     $(this).find('textarea').val('');
-
-
-
   });
 
 
 
 
+  function loadTweets(){
+    // GET list of tweets from /tweets:
+    $.ajax({
+      method: 'GET',
+      url: '/tweets',
+      success: function(data){
+        console.log('data=', data);
+        renderTweets(data);
 
+      }
+    });
+  };
+
+  loadTweets();
 
 
 
