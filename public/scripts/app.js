@@ -88,17 +88,20 @@ $(document).ready(function(){
   renderTweets(tweetList);
 
 
-  $('#submit-tweet').on('click', function(event){
+  $('#new-tweet-form').on('submit', function(event){
+    // Prevent the form from sending  POST request to the server, and redirecting the page
     event.preventDefault();
-    // Read new tweet typed into textarea
-    var new_tweet = $(this).siblings('textarea').val();
+    // alert('tweet was clicked');
+    // console.log(event);
 
-    // console.log(new_tweet);
+    var tweet = $(this).serialize();
+
+    console.log(tweet);
 
     $.ajax({
-      url: '/tweets',
       method: 'POST',
-      data: {text: new_tweet},
+      url: '/tweets',
+      data: tweet,
 
       sucess: function(data, status, jqXHR){
         console.log('AJAX request successful\n status:', status);
@@ -109,7 +112,12 @@ $(document).ready(function(){
       }
 
 
+
+
     });
+
+    $(this).find('textarea').val('');
+
 
 
   });
