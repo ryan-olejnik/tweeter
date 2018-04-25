@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 var sample_tweet = {
   "user": {
     "name": "Newton",
@@ -76,12 +70,10 @@ function createTweet(tweet){
   $tweet.append('<footer>');
   $tweet.find('header').append('<h3>').find('h3').text(`${tweet.user.name} aka ${tweet.user.handle}`);
   $tweet.find('header').append('<img>').find('img').attr('src', tweet.user.avatars.regular);
-  $tweet.find('footer').append('<p>').addClass('date-tweeted').find('p').text(`${findDaysAgo(tweet.created_at)} days ago`);
-  // console.log($tweet[0]);
+  $tweet.find('footer').append('<p>').addClass('date-tweeted').find('p').text(findDaysAgo(tweet.created_at));
 
   return $tweet;
 }
-
 
 function renderTweets(tweetList){
   for (let tweet of tweetList){
@@ -90,7 +82,44 @@ function renderTweets(tweetList){
   }
 }
 
+//-------------------------------------------------------------
 
 $(document).ready(function(){
   renderTweets(tweetList);
+
+
+  $('#submit-tweet').on('click', function(event){
+    event.preventDefault();
+    // Read new tweet typed into textarea
+    var new_tweet = $(this).siblings('textarea').val();
+
+    // console.log(new_tweet);
+
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: {text: new_tweet},
+
+      sucess: function(data, status, jqXHR){
+        console.log('AJAX request successful\n status:', status);
+      },
+
+      error: function(jqXHR, status, error){
+        console.log('status:', status, '\nError thrown:', error);
+      }
+
+
+    });
+
+
+  });
+
+
+
+
+
+
+
+
+
 });

@@ -21,6 +21,7 @@
     <script type='text/javascript' src='scripts/composer-char-counter.js'></script>
 
     <!-- App JS -->
+    <script type="text/javascript" src="/scripts/findDaysAgo.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
 
@@ -35,27 +36,14 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <hr>
         <form method='POST' action='/tweets/'>
           <textarea name="text" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet">
+          <input id='submit-tweet' type="submit" value="Tweet">
           <span id="counter">140</span>
         </form>
       </section>
       <div id='tweets-container'>
-        <h3>See tweets below:</h3>
-        
-        <article class='tweet'>
-          <header>
-            <h3>Bob Tweeted....</h3>
-            <img src='images/sample_avatar2.png'>
-          </header>
-          <p>Tweet Tweet Tweet...</p>
-          <hr>
-          <footer>
-            <p id='date-tweeted'>5d ago</p>
-          </footer>
-        </article>
+        <h3>Tweet Feed</h3>
 
         <article class='tweet'>
           <header>
@@ -63,7 +51,6 @@
             <img src='images/sample_avatar2.png'>
           </header>
           <p>Tweet Tweet Tweet...</p>
-          <hr>
           <footer>
             <p id='date-tweeted'>5d ago</p>
           </footer>
@@ -74,3 +61,6 @@
     </main>
   </body>
 </html>
+
+
+

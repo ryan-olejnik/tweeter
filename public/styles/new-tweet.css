@@ -5,7 +5,8 @@
   border-radius: 20px;
   box-shadow: 9px 8px 12px 0px #888888;
   position: relative;
-  top: -25px;
+      margin: 30px;
+    margin-top: 20px;
 }
 
 .new-tweet:hover{
@@ -17,19 +18,20 @@
     position: relative;
 }
 
-.new-tweet hr {
-  width: 350px;
-}
 
 .new-tweet textarea {
   position: relative;
-  top: 15px;
+  top: 9px;
+  height: 6em;
+  width: 52em;
+  border-radius: 2px;
 }
 
 .new-tweet input {
-  height: 44px;
+  height: 6em;
+  width: 6em;
   position: relative;
-  top: -1px;
+  top: -33px;
   border-radius: 5px;
 }
 
@@ -38,7 +40,7 @@
 }
 
 #counter{
-  text-align: right;
-  padding: 5px;
+  top: 36px;
+  left: 65px;
 }
 

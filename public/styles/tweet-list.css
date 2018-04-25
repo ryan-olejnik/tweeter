@@ -2,7 +2,7 @@
   background-color: #ccffff;
   border-color: black;
   border-radius: 10px;
-  color: #b8c8e0;
+  color: #999999;
   margin:1em;
 }
 
@@ -21,6 +21,10 @@
   margin: auto;
   line-height: 46px;
 
+}
+
+#tweets-container footer {
+  border-top: 1px solid #666;
 }
 
 #tweets-container footer p {
