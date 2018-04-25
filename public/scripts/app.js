@@ -76,8 +76,9 @@ function createTweet(tweet){
   $tweet.append('<footer>');
   $tweet.find('header').append('<h3>').find('h3').text(`${tweet.user.name} aka ${tweet.user.handle}`);
   $tweet.find('header').append('<img>').find('img').attr('src', tweet.user.avatars.regular);
-  $tweet.find('footer').append('<p>').addClass('date-tweeted').find('p').text('date tewwted: date');
-  console.log($tweet[0]);
+  $tweet.find('footer').append('<p>').addClass('date-tweeted').find('p').text(`${findDaysAgo(tweet.created_at)} days ago`);
+  // console.log($tweet[0]);
+
   return $tweet;
 }
 
