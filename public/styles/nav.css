@@ -3,6 +3,7 @@
   background-color: #00a087;
   height: 80px;
   padding-left: 2em;
+  position: relative;
 }
 
 #nav-bar > img {
@@ -22,4 +23,13 @@
   position: relative;
   top: 76px;
   left: 55px;
+}
+
+#toggle-newTweet-view{
+  width: 15em;
+  position: absolute;
+  height: 4em;
+  top: 8px;
+  right: 10px;
+  border-radius: 15px;
 }

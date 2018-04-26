@@ -43,9 +43,9 @@
 #tweets-container img {
   width: 40px;
   height: 40px;
+  top: -59px;
+  left: -406px;
   position: relative;
-  top: -60px;
-  left: -150px;
   border: solid black;
   background-color: white;
   border-radius: 3px;

@@ -76,8 +76,9 @@ function createTweet(tweet){
 }
 
 function renderTweets(tweetList){
+  $('#tweets-container').empty();
   for (let tweet of tweetList){
-    $('#tweets-container').append(createTweet(tweet));
+    $('#tweets-container').prepend(createTweet(tweet));
     // console.log(tweet);
   }
 }
@@ -86,6 +87,7 @@ function renderTweets(tweetList){
 
 $(document).ready(function(){
   renderTweets(tweetList);
+  loadTweets();
 
   // Creating a new Tweet:
   $('#new-tweet-form').on('submit', function(event){
@@ -93,30 +95,37 @@ $(document).ready(function(){
     event.preventDefault();
     // alert('tweet was clicked');
     // console.log(event);
+    $('.new-tweet').toggleClass('hidden');
 
     var tweet = $(this).serialize();
+    var tweetLength = $(this).find('textarea').val().length;
 
-    console.log(tweet);
 
-    $.ajax({
-      method: 'POST',
-      url: '/tweets',
-      data: tweet,
+    if (tweetLength > 140){
+      alert('Maximum 140 characters!!');
+    }
+    else if (tweetLength === 0){
+      alert('Nothing to tweet....');
+    } else {
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: tweet,
 
-      success: function(data, status, jqXHR){
-        console.log('Tweet successfully posted to tweet database!\n status:', status);
-      },
+        success: function(data, status, jqXHR){
+          console.log('Tweet successfully posted to tweet database!\n status:', status);
+          loadTweets();
+        },
 
-      error: function(jqXHR, status, error){
-        console.log('Tweet was NOT posted to tweet database\nstatus:', status, '\nError thrown:', error);
-      }
-
-    });
-
+        error: function(jqXHR, status, error){
+          console.log('Tweet was NOT posted to tweet database\nstatus:', status, '\nError thrown:', error);
+        }
+      });
     $(this).find('textarea').val('');
+    
+  }
+
   });
-
-
 
 
   function loadTweets(){
@@ -125,16 +134,22 @@ $(document).ready(function(){
       method: 'GET',
       url: '/tweets',
       success: function(data){
-        console.log('data=', data);
+        console.log('Tweets in in-memory-db.js loaded to home page!');
         renderTweets(data);
 
       }
     });
-  };
+  }
 
-  loadTweets();
+  //Toggle new-tweet section visibility:
+  $('#toggle-newTweet-view').on('click', function() {
+    // alert('button clicked!');
+    $('.new-tweet').toggleClass('hidden');
+    $('.new-tweet').find('textarea').focus();
 
+  });
 
 
 
 });
+

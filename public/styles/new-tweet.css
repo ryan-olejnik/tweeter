@@ -5,8 +5,9 @@
   border-radius: 20px;
   box-shadow: 9px 8px 12px 0px #888888;
   position: relative;
-      margin: 30px;
-    margin-top: 20px;
+  margin: 30px;
+  margin-top: 20px;
+  display: block; 
 }
 
 .new-tweet:hover{
@@ -44,3 +45,7 @@
   left: 65px;
 }
 
+
+.hidden {
+  display: none;
+}
