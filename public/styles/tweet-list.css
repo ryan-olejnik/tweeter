@@ -18,7 +18,6 @@
   height: 50px;
   margin: auto;
   line-height: 46px;
-
 }
 
 #tweets-container footer {
@@ -30,7 +29,6 @@
   text-align: left;
   top: -5px;
   position: relative;
-  
 }
 
 #tweets-container hr {
