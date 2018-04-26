@@ -19,7 +19,6 @@
     position: relative;
 }
 
-
 .new-tweet textarea {
   position: relative;
   top: 9px;
@@ -44,7 +43,6 @@
   top: 36px;
   left: 65px;
 }
-
 
 .hidden {
   display: none;
