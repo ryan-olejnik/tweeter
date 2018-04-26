@@ -58,6 +58,7 @@ $(document).ready(function(){
     $(this).find('textarea').val('');
   }
   $('#new-tweet-form').find('textarea').focus();
+  $('#counter').text(140);
   });
 
 
@@ -76,7 +77,7 @@ $(document).ready(function(){
 
   //Toggle new-tweet section visibility:
   $('#toggle-newTweet-view').on('click', function() {
-    $('.new-tweet').slideToggle(50);
+    $('.new-tweet').slideToggle(150);
     $('.new-tweet').find('textarea').focus();
 
   });
