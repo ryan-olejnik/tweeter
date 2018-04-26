@@ -15,7 +15,7 @@ MongoClient.connect(MONGODB_URI, (err, db)=> {
   if (err){
     console.log('Failed to connect to Mongo Database', MONGODB_URI);
   }
-  console.log('Connected to Mondo Database located at:', MONGODB_URI);
+  console.log('Connected to Mongo Database located at:', MONGODB_URI);
 
   var DataHelpers = require("./lib/data-helpers.js")(db);
   
