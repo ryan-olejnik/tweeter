@@ -1,16 +1,14 @@
 #tweets-container > article {
-  background-color: #ccffff;
-  border-color: black;
-  border-radius: 10px;
-  color: #999999;
-  margin:1em;
-}
-
-#tweets-container > article:hover {
   background-color: #4dffff;
   border-color: black;
   border-radius: 10px;
   color: #2e3238;
+  margin:1em;
+  opacity: 0.65;
+}
+
+#tweets-container > article:hover {
+  opacity: 1;
 }
 
 #tweets-container header{

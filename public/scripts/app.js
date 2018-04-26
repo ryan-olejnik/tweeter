@@ -1,14 +1,15 @@
-// Create tweet:
-
 function createTweet(tweet){
+  // Create HTML tweet:
   var $tweet = $('<article>').addClass('tweet');
   $tweet.append('<header>');
   $tweet.append('<p>').find('p').text(tweet.content.text);
   $tweet.append('<footer>');
-  $tweet.find('header').append('<h3>').find('h3').text(`${tweet.user.name} aka ${tweet.user.handle}`);
-  $tweet.find('header').append('<img>').find('img').attr('src', tweet.user.avatars.regular);
-  $tweet.find('footer').append('<p>').addClass('date-tweeted').find('p').text(findDaysAgo(tweet.created_at));
-  // CHANGES TO MAKE: create children seperately (with text), and then append them to article so that if additional <p> are added, they are not targeted
+  var $h3 = `<h3>${tweet.user.name} - ${tweet.user.handle}</h3>`;
+  var $img = `<img src='${tweet.user.avatars.regular}'>`;
+  var $foot = `<p>${findDaysAgo(tweet.created_at)}</p>`;
+  $tweet.find('header').append($h3);
+  $tweet.find('header').append($img);
+  $tweet.find('footer').append($foot).addClass('date-tweeted');
   return $tweet;
 }
 
@@ -16,22 +17,17 @@ function renderTweets(tweetList){
   $('#tweets-container').empty();
   for (let tweet of tweetList){
     $('#tweets-container').prepend(createTweet(tweet));
-    // console.log(tweet);
   }
 }
 
-//-------------------------------------------------------------
+//----------------------------------------------------------------------
 
 $(document).ready(function(){
   loadTweets();
 
   // Creating a new Tweet:
   $('#new-tweet-form').on('submit', function(event){
-    // Prevent the form from sending  POST request to the server, and redirecting the page
     event.preventDefault();
-    // alert('tweet was clicked');
-    // console.log(event);
-
     var tweet = $(this).serialize();
     var tweetLength = $(this).find('textarea').val().length;
 
