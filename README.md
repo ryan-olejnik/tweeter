@@ -1,6 +1,6 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter replica using Mongodb, Express, HTML5 and CSS.
+Tweeter is a simple, single-page Twitter replica using Mongodb and Express.
 
 ## Getting Started
 
